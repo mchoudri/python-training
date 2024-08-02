@@ -1,0 +1,195 @@
+
+
+-------------------------
+
+n=11
+
+for i in range (n, 0, -1):
+	print((n-i) * ' ' + i * '*')
+
+
+# Python3 Program to demonstrate
+# staircase pattern
+def pattern(n):
+
+	for i in range(1,n+1):
+
+		k =i + 1 if(i % 2 != 0) else i
+
+		for g in range(k,n):
+			if g>=k:
+				print(end=" ")
+
+		for j in range(0,k):
+			if j == k - 1:
+				print(" * ")
+			else:
+				print(" * ", end = " ")
+
+n = 10
+pattern(n)
+
+
+----------------
+
+# Python program to print pattern G
+def Pattern(line):
+	pat=""
+	for i in range(0,line):
+		for j in range(0,line):
+			if ((j == 1 and i != 0 and i != line-1) or ((i == 0 or
+				i == line-1) and j > 1 and j < line-2) or (i == ((line-1)/2)
+				and j > line-5 and j < line-1) or (j == line-2 and
+				i != 0 and i != line-1 and i >=((line-1)/2))):
+				pat=pat+"*"
+			else:
+				pat=pat+" "
+		pat=pat+"\n"
+	return pat
+
+# Driver Code
+line = 7
+print(Pattern(line))
+
+----------------------
+
+
+from datetime import *
+import pytz
+
+
+tz_INDIA = pytz.timezone('Asia/Kolkata')
+datetime_INDIA = datetime.now(tz_INDIA)
+print("INDIA time:", datetime_INDIA.strftime("%H:%M:%S"))
+
+
+
+-------------------------
+
+
+# Python program to find sum of given
+# series.
+
+def productPrimeFactors(n):
+    product = 1
+    for i in range(2, n + 1):
+        if (n % i == 0):
+            isPrime = 1
+
+            for j in range(2, int(i / 2 + 1)):
+                if (i % j == 0):
+                    isPrime = 0
+                    break
+
+            if (isPrime):
+                product = product * i
+
+    return product
+
+n = 44
+print(productPrimeFactors(n))
+
+--------------------------------
+
+# Python program for implementation of MergeSort
+
+
+def merge(arr, l, m, r):
+	n1 = m - l + 1
+	n2 = r - m
+
+	L = [0] * (n1)
+	R = [0] * (n2)
+
+	for i in range(0, n1):
+		L[i] = arr[l + i]
+
+	for j in range(0, n2):
+		R[j] = arr[m + 1 + j]
+
+	i = 0	 # Initial index of first subarray
+	j = 0	 # Initial index of second subarray
+	k = l	 # Initial index of merged subarray
+	while i < n1 and j < n2:
+		if L[i] <= R[j]:
+			arr[k] = L[i]
+			i += 1
+		else:
+			arr[k] = R[j]
+			j += 1
+		k += 1
+	while i < n1:
+		arr[k] = L[i]
+		i += 1
+		k += 1
+
+	while j < n2:
+		arr[k] = R[j]
+		j += 1
+		k += 1
+
+def mergeSort(arr, l, r):
+	if l < r:
+		m = l+(r-l)//2
+		mergeSort(arr, l, m)
+		mergeSort(arr, m+1, r)
+		merge(arr, l, m, r)
+
+arr = [12, 11, 13, 5, 6, 7]
+n = len(arr)
+print("Given array is")
+for i in range(n):
+	print("%d" % arr[i],end=" ")
+
+mergeSort(arr, 0, n-1)
+print("\n\nSorted array is")
+for i in range(n):
+	print("%d" % arr[i],end=" ")
+
+----------------------
+
+
+# Python program to sort a list of tuples by the second Item
+
+# Function to sort the list of tuples by its second item
+def Sort_Tuple(tup):
+ 
+    lst = len(tup)
+    for i in range(0, lst):
+
+        for j in range(0, lst - i - 1):
+            if (tup[j][1] > tup[j + 1][1]):
+                temp = tup[j]
+                tup[j] = tup[j + 1]
+                tup[j + 1] = temp
+    return tup
+
+
+
+tup = [('for', 24), ('is', 10), ('Geeks', 28),
+       ('Geeksforgeeks', 5), ('portal', 20), ('a', 15)]
+
+print(Sort_Tuple(tup))
+
+------------------
+
+
+
+# Python3 code to demonstrate working of
+# All pair combinations of 2 tuples
+
+
+test_tuple1 = (4, 5)
+test_tuple2 = (7, 8)
+
+
+print("The original tuple 1 : " + str(test_tuple1))
+print("The original tuple 2 : " + str(test_tuple2))
+
+res = [(a, b) for a in test_tuple1 for b in test_tuple2]
+res = res + [(a, b) for a in test_tuple2 for b in test_tuple1]
+
+print("The filtered tuple : " + str(res))
+
+
+

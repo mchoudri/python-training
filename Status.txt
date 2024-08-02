@@ -1,0 +1,24 @@
+
+
+
+Hi Srivalli,
+
+
+On April 22nd, I have given the KT on Set, Dictionary, Packages, and Errors.
+
+And in the afternoon, attend the your session on Advanced python topics,Files and Exception handling.and how Files works and Exception handling works
+
+Files Methods
+File Access Modes
+Opening a File
+Reading from a File
+Closing a file
+Writing to a file
+Appending a File
+File cursor positions
+
+Try and Except Statement 
+Try Expect 
+Assertions
+User defined exceptions
+Finally Keyword
